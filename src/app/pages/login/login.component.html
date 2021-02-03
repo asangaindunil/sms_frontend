@@ -1,0 +1,34 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h1 id="title" class="title">Login</h1>
+      <p class="sub-title">Hello! Student.</p>
+      <div class="alert alert-info" *ngIf="wait" role="alert">
+        Please Wait.....!
+      </div>
+      <div class="alert alert-warning" *ngIf="err" role="alert">
+        {{errMsg}}
+      </div>
+      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+      <input type="text" class="fadeIn second" formControlName="email" placeholder="Email">
+      <input type="password" class="fadeIn third" formControlName="password" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+      <a class="nav-link" [routerLink]="['/registration']">
+        <button class="btn btn-secondary" >Registration</button>
+      </a>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <!-- <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    -->
+  </div>
+</div>
